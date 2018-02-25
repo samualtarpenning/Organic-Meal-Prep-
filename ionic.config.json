@@ -1,0 +1,9 @@
+{
+  "name": "email-firebase-sdk",
+  "app_id": "OrganicMealPrep",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
+ 

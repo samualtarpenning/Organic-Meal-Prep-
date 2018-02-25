@@ -1,0 +1,44 @@
+.auth-page {
+    background-image: url("/assets/imgs/loginBackground.png");
+    background-color: #cccccc;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 170px;
+}
+
+
+
+.loginTitle{
+    text-align: center;
+    padding-top:  18px;
+  
+
+}
+
+.email{
+    padding-top: 5px;
+    padding-bottom: 23px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.login-card{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    
+}
+
+.password{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+}
+
+.checkbox{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.terms{
+    background-color: rgba(255, 255, 255, 0.3); 
+    text-decoration: underline;
+    text-indent: -25%; 
+}
