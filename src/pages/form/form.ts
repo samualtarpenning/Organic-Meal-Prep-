@@ -29,7 +29,7 @@ export class FormPage {
   sendMessage( lastname: string, firstname: string, streetAdress: string, 
   city: string, state: string ) {
     
-    this.af.list(`userProfile`).push({ lastname, firstname, streetAdress, city, state });
+    this.af.list(`messages`).push({ lastname, firstname, streetAdress, city, state });
      
     this.lastname = "";
     this.firstname = "";
