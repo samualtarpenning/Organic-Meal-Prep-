@@ -9,11 +9,13 @@ import {
 } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
-
+import { HomePage } from '../home/home';
 import { EmailValidator } from '../../validators/email';
 import firebase from 'firebase/app';
-import { TermsPage } from '../terms/terms';
-import { FormPage } from '../form/form';
+
+import { Facebook } from '@ionic-native/facebook';
+import { FirebaseAuth } from '@firebase/auth-types';
+import { MenuPage } from '../menu/menu';
 
 
 @IonicPage()
@@ -23,13 +25,15 @@ import { FormPage } from '../form/form';
 })
 export class LoginPage {
   public loginForm: FormGroup;
+ 
   constructor(
     public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
     public authProvider: AuthProvider,
-    formBuilder: FormBuilder
-   
+    formBuilder: FormBuilder,
+    
+  
   ) {
     this.loginForm = formBuilder.group({
       email: [
@@ -40,20 +44,14 @@ export class LoginPage {
         '',
         Validators.compose([Validators.required, Validators.minLength(6)])
       ]
-,
-      checkbox: [
-        'checked=false' ,
-        Validators.compose([Validators.required, Validators.requiredTrue ])],
     });
-   
-     
-  }
-  
-  termsAgreement(): void{ 
-    this.navCtrl.push('TermsPage');
   }
 
-  goToSignup(): void {
+
+  
+
+  
+  goToSignup(): void {  
     this.navCtrl.push('SignupPage');
   }
 
@@ -61,18 +59,14 @@ export class LoginPage {
     this.navCtrl.push('ResetPasswordPage');
   }
 
+
+  
+
   async loginUser(): Promise<void> {
-    
-    
     if (!this.loginForm.valid) {
       console.log(
-        `Form is not valid yet, current value: ${this.loginForm.value}`,
-     
+        `Form is not valid yet, current value: ${this.loginForm.value}`
       );
-
-
-    
-      
     } else {
       const loading: Loading = this.loadingCtrl.create();
       loading.present();
@@ -86,7 +80,7 @@ export class LoginPage {
           password
         );
         await loading.dismiss();
-        this.navCtrl.setRoot(FormPage);
+        this.navCtrl.setRoot(MenuPage);
       } catch (error) {
         await loading.dismiss();
         const alert: Alert = this.alertCtrl.create({

@@ -9,7 +9,8 @@
   p {
     font-size: 0.8em;
     color: #ff0000;
-    background-color: rgba(255, 255, 255, .3);
+    background-color: rgba(255, 255, 255, 0.3);
+  
   }
 
   ion-label {
@@ -26,6 +27,7 @@
     }
     ion-input {
       border-bottom: 1px solid #ff6153;
+      background-color: rgba(255, 255, 255, 0.3);
     }
   }
 
@@ -42,12 +44,14 @@
     min-height: 2.2rem;
     p {
       font-size: 60%;
+      background-color: rgba(255, 255, 255, 0.3);
     }
     ion-label {
       margin: 2px 0;
     }
     .item-inner {
       border-bottom: 0 !important;
+      background-color: rgba(255, 255, 255, 0.3);
     }
   }
 }

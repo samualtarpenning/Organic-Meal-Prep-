@@ -1,15 +1,21 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color= "primary">
     <ion-title>Signup</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="auth-page">
 
+    <ion-card class="signupCard">
+ 
+
+   <img style=" margin-left: auto;  margin-right: auto; width: 15%; height: 19%; padding-bottom: 15px; "src="assets/imgs/logo2.png"
+        alt="Banner for the login page" class="loginHead"/> 
+
   <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
-    <ion-item [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.touched"
+    <ion-item class="signupEmail" [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.touched"
       [class.valid]="signupForm.controls.email.valid && signupForm.controls.email.touched">
-      <ion-label stacked>Email</ion-label>
+      <ion-label stacked> <ion-icon name="mail"></ion-icon>  Email</ion-label>
       <ion-input formControlName="email" type="email" placeholder="Your email address">
       </ion-input>
     </ion-item>
@@ -18,9 +24,11 @@
       <p>Please enter a valid email address.</p>
     </ion-item>
 
-    <ion-item [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.touched"
+    
+
+    <ion-item class="signupPass" [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.touched"
       [class.valid]="signupForm.controls.password.valid && signupForm.controls.password.touched">
-      <ion-label stacked>Password</ion-label>
+      <ion-label stacked> <ion-icon name="lock"></ion-icon> Password</ion-label>
       <ion-input formControlName="password" type="password" placeholder="Your password">
       </ion-input>
     </ion-item>
@@ -28,9 +36,19 @@
       && signupForm.controls.password.touched">
       <p>Your password needs more than 6 characters.</p>
     </ion-item>
+<ion-item class="terms">
+       <button ion-button block type clear (click)=termsAgreement() class="terms">terms and conditions</button>
+      </ion-item>
+   
+          <ion-item class= "checkbox">
+          <ion-label class="termsText">I agree to terms of use <br> and conditions</ion-label>
+          <ion-checkbox formControlName="checkbox"> </ion-checkbox>
+          </ion-item>
 
     <button ion-button block type="submit" [disabled]="!signupForm.valid">
-      Create a new Account
+      NEXT
     </button>
+
+ 
   </form>
-</ion-content>
+ </ion-card>

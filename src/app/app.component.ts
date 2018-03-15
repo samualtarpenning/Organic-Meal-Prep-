@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+
 import firebase from 'firebase';
 import { firebaseConfig } from './credentials';
 
 import { Unsubscribe } from '@firebase/util';
+
+import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { AngularFireModule } from 'angularfire2'
 
 
 @Component({
@@ -15,24 +16,21 @@ export class MyApp {
   rootPage: any;
 
   constructor(
-    platform: Platform,
-    statusBar: StatusBar,
-    splashScreen: SplashScreen
+    
+ 
   ) {
     firebase.initializeApp(firebaseConfig);
 
     const unsubscribe: Unsubscribe = firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        this.rootPage = 'LoginPage';   
+        this.rootPage = 'LoginPage';
         unsubscribe();
-      } else {
+      } else { 
         this.rootPage = 'LoginPage';
         unsubscribe();
       }
     });
 
-    
-  
+ 
   }
 }
-

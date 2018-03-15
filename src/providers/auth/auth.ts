@@ -6,8 +6,13 @@ import { User } from '@firebase/auth-types';
 export class AuthProvider {
   constructor() {}
 
+
+
+  
+
   loginUser(email: string, password: string): Promise<User> {
     return firebase.auth().signInWithEmailAndPassword(email, password);
+    
   }
 
   async signupUser(email: string, password: string): Promise<User> {

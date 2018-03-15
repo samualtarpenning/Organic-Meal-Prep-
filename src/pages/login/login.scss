@@ -1,44 +1,68 @@
+
+
 .auth-page {
-    background-image: url("/assets/imgs/loginBackground.png");
-    background-color: #cccccc;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position-y: 170px;
+
+  //background-image: url(/assets/imgs/logo1.png);
+background-repeat: no-repeat;
+    background-size: 300px 400px; 
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25px;
+   
+    background-color: rgb(230,230,230);
 }
 
-
-
-.loginTitle{
-    text-align: center;
-    padding-top:  18px;
-  
-
-}
-
-.email{
-    padding-top: 5px;
-    padding-bottom: 23px;
+.loginCard{
     background-color: rgba(255, 255, 255, 0.3);
-}
-
-.login-card{
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+    padding-top: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.3s;
+    margin: auto;
+   margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 18px;
     
 }
 
-.password{
+.loginEmail{
     background-color: rgba(255, 255, 255, 0.3);
     padding-top: 20px;
+
 }
 
-.checkbox{
+.loginPassword{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+
+}
+
+.error-message{
+    background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+.error2{
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.terms{
-    background-color: rgba(255, 255, 255, 0.3); 
-    text-decoration: underline;
-    text-indent: -25%; 
+.loginButton{
+    background-color:#4CAF50;
+    font-size: 20px;
+
+   
 }
+
+.signupButton{
+    color:#4CAF50;
+    font-size: 14px;
+}
+
+.forgotPassword{
+    color: #4CAF50;
+    font-size: 14px;
+}
+
+ 

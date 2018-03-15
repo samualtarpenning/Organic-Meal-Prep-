@@ -9,10 +9,13 @@ import {
 } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
-
+import { HomePage } from '../home/home';
 import { EmailValidator } from '../../validators/email';
-
+import firebase from 'firebase/app';
 import { LoginPage } from '../login/login';
+import { FormPage } from '../form/form';
+import { TermsPage } from '../terms/terms';
+
 
 @IonicPage()
 @Component({
@@ -36,9 +39,18 @@ export class SignupPage {
       password: [
         '',
         Validators.compose([Validators.required, Validators.minLength(6)])
-      ]
+      
+      ],
+
+      checkbox: [
+        'checked=false' ,
+        Validators.compose([Validators.required, Validators.requiredTrue ])],
     });
   }
+  termsAgreement(){
+    this.navCtrl.push(TermsPage)
+  }
+
 
   async signupUser(): Promise<void> {
     if (!this.signupForm.valid) {
@@ -58,7 +70,7 @@ export class SignupPage {
           password
         );
         await loading.dismiss();
-        this.navCtrl.setRoot(LoginPage);
+        this.navCtrl.setRoot(FormPage);
       } catch (error) {
         await loading.dismiss();
         const alert: Alert = this.alertCtrl.create({

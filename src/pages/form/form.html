@@ -1,86 +1,55 @@
-
-
-<ion-content padding class="form-content">
-  <form class="form" [formGroup]="validations_form" id="contactForm" >
-
-    
-    
+<ion-header>
+  <ion-navbar  color="primary">
+    <ion-title stlye="text-align: center;">
      
-   
+      Last Step!
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-    <ion-item>
-      <ion-label floating color="primary">First Name</ion-label>
-      <ion-input type="text" formControlName="name" id="firstName"></ion-input>
-    </ion-item>
-    <div class="validation-errors">
-      <ng-container *ngFor="let validation of validation_messages.name">
-        <div class="error-message" *ngIf="validations_form.get('name').hasError(validation.type) && (validations_form.get('name').dirty || validations_form.get('name').touched)">
-          {{ validation.message }}
-        </div>
-      </ng-container>
-    </div>
+<ion-content padding>
 
-    <ion-item>
-      <ion-label floating color="primary">Last name</ion-label>
-      <ion-input type="text" formControlName="lastname" id='lastName'></ion-input>
-    </ion-item>
-    <div class="validation-errors">
-      <ng-container *ngFor="let validation of validation_messages.lastname">
-        <div class="error-message" *ngIf="validations_form.get('lastname').hasError(validation.type) && (validations_form.get('lastname').dirty || validations_form.get('lastname').touched)">
-          {{ validation.message }}
-        </div>
-      </ng-container>
-    </div>
+<ion-card class="formCard">
+  <ion-card-content>
 
-    <ion-item>
-      <ion-label floating color="primary">Email</ion-label>
-      <ion-input  type="text" formControlName="email" id="email"></ion-input>
-    </ion-item>
-    <div class="validation-errors">
-      <ng-container *ngFor="let validation of validation_messages.email">
-        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
-          {{ validation.message }}
-        </div>
-      </ng-container>
-    </div>
+ 
+      <img style=" margin-left: auto;  margin-right: auto; width: 12%; height: 14%; padding-bottom: 15px; "src="assets/imgs/logo2.png"
+      alt="Banner for the login page" class="loginHead"/> 
+  <ion-item>
 
-    <ion-item>
-      <ion-label floating color="primary">Address line 1</ion-label>
-      <ion-input type="text" formControlName="address1" id="addressLine1"></ion-input>
-    </ion-item>
-    <div class="validation-errors">
-      <ng-container *ngFor="let validation of validation_messages.lastname">
-        <div class="error-message" *ngIf="validations_form.get('lastname').hasError(validation.type) && (validations_form.get('lastname').dirty || validations_form.get('lastname').touched)">
-          {{ validation.message }}
-        </div>
-      </ng-container>
-    </div>
+    <ion-label floating>First Name</ion-label>
+    <ion-input type="text" [(ngModel)]="firstname"></ion-input>
+  </ion-item>
 
-    <ion-item>
-      <ion-label floating color="primary">Address line 2</ion-label>
-      <ion-input type="text" formControlName="address2" id="addressLine2"></ion-input>
-    </ion-item>
-    <div class="validation-errors">
-      <ng-container *ngFor="let validation of validation_messages.lastname">
-        <div class="error-message" *ngIf="validations_form.get('lastname').hasError(validation.type) && (validations_form.get('lastname').dirty || validations_form.get('lastname').touched)">
-          {{ validation.message }}
-        </div>
-      </ng-container>
-    </div>
+  <ion-item>
+    <ion-label floating>Last Name</ion-label>
+    <ion-input type="text" [(ngModel)]="lastname"></ion-input>
+  </ion-item>
 
-    <ion-item>
-      <ion-label floating color="primary">Gender</ion-label>
-      <ion-select formControlName="gender" cancelText="Cancel" okText="OK">
-        <ion-option *ngFor="let gender of genders" [value]="gender" >{{ gender }}</ion-option>
-      </ion-select>
-    </ion-item>
+  <ion-item>
+    <ion-label floating>Street Address</ion-label>
+    <ion-input type="text" [(ngModel)]="streetAddress"></ion-input>
+  </ion-item>
 
-    
+  <ion-item>
+    <ion-label floating>City</ion-label>
+    <ion-input type="text" [(ngModel)]="city"></ion-input>
+  </ion-item>
 
-    
-   
+  <ion-item>
+    <ion-label floating>State</ion-label>
+    <ion-input [(ngModel)]="state"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Phone Number</ion-label>
+    <ion-input type="tel" [(ngModel)]="phone"></ion-input>
+  </ion-item>
+  
 
 
-    <button ion-button full type="submit" [disabled]="!validations_form.valid">Submit</button>
-  </form>
-</ion-content>
+  <button block ion-button clear (click)="sendMessage( lastname, firstname, streetAddress, city, state, phone)">Submit</button>
+
+
+ </ion-card-content>
+</ion-card> 

@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { IonicPageModule, IonicPage } from 'ionic-angular';
 import { LoginPage } from './login';
 
+
+@IonicPage(
+  {
+    name: 'LoginPage'
+  }
+  )
 @NgModule({
   declarations: [
     LoginPage,

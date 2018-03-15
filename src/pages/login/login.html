@@ -1,27 +1,33 @@
-
-
+ 
 
 <ion-content padding class="auth-page">
-<ion-card class="login-card">
- <h1 class="loginTitle">Organic Meal Prep LLC</h1>
-  <ion-card-content>
-      
-    
+
+  
+ 
+
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
-    <ion-item class="email" [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.touched"
+    <ion-card class="loginCard">
+
+   <img style=" margin-left: auto;  margin-right: auto; width: 30%; height: 38%; padding-bottom: 15px; "src="assets/imgs/logo1.png"
+        alt="Banner for the login page" class="loginHead"/> 
+
+
+    <ion-item  class="loginEmail" [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.touched"
       [class.valid]="loginForm.controls.email.valid && loginForm.controls.email.touched">
-      <ion-label stacked>Email</ion-label>
+     
+      <ion-label stacked> <ion-icon name="mail"></ion-icon>   Email</ion-label>
+      
       <ion-input formControlName="email" type="email" placeholder="Your email address">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid &&
      loginForm.controls.email.touched">
-      <p>Please enter a valid email address.</p>
+      <p class="error2">Please enter a valid email address.</p>
     </ion-item>
-
-    <ion-item class="password" [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.touched"
+ 
+    <ion-item class="loginPassword" [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.touched"
       [class.valid]="loginForm.controls.password.valid && loginForm.controls.password.touched">
-      <ion-label stacked>Password</ion-label>
+      <ion-label stacked>  <ion-icon name="lock"></ion-icon> Password</ion-label>
       <ion-input formControlName="password" type="password" placeholder="Your password">
       </ion-input>
     </ion-item>
@@ -29,26 +35,17 @@
     && loginForm.controls.password.touched">
       <p>Your password needs more than 6 characters.</p>
     </ion-item>
-<ion-item class="terms">
-<button ion-button block type clear (click)=termsAgreement() class="terms">terms and conditions</button>
-</ion-item>
-    <ion-item class= "checkbox">
-    <ion-label>I have read and agree to <br> terms of use and conditions</ion-label>
-    <ion-checkbox formControlName="checkbox"> </ion-checkbox>
-    </ion-item>
-    
-    <button ion-button block type="submit" name="submit" value="submit"[disabled]="!loginForm.valid">
-      Log In
-    </button>
-  </form>
 
-  <button ion-button block clear (click)="goToSignup()">
+    <button class="loginButton" ion-button block type="submit" [disabled]="!loginForm.valid">Login</button>
+  
+   
+ 
+  
+  <button class="signupButton" ion-button block clear (click)="goToSignup()">
     Create a new account
   </button>
-
-  <button ion-button block clear (click)="goToResetPassword()">
-    I forgot my password 
+  
+  <button class="forgotPassword" ion-button block clear (click)="goToResetPassword()">
+    I forgot my password
   </button>
-</ion-card-content>
 </ion-card>
-</ion-content>

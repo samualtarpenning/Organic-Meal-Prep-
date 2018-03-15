@@ -1,10 +1,10 @@
 {
-  "name": "Organic Meal Prep",
-  "short_name": "Organic Meal",
+  "name": "Organic Meal Prep LLC",
+  "short_name": "Organic Meal Prep",
   "start_url": "index.html",
   "display": "fullscreen",
   "icons": [{
-    "src": "assets/imgs/loginBackground.png",
+    "src": "assets/imgs/logo1.png",
     "sizes": "512x512",
     "type": "image/png"
   }],

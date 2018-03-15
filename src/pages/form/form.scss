@@ -1,22 +1,16 @@
 page-form {
 
-    .term
-    {
-      padding-top: 20px;
-    }
-  
-    .terms-checkbox-label
-    {
-      overflow: visible;
-      text-overflow: initial;
-      white-space: initial;
-      opacity: 0.5;
-      font-size: 14px;
-      font-weight: bold;
-    }
-  
-    .error-message
-    {
-      color: red;
-    }
-  }
+}
+
+.formCard{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-top: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.3s;
+    margin: auto;
+   margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}

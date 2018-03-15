@@ -9,7 +9,7 @@ import {
 } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
-
+import { HomePage } from '../home/home';
 import { EmailValidator } from '../../validators/email';
 
 @IonicPage()
@@ -49,7 +49,7 @@ export class ResetPasswordPage {
         const loginUser: void = await this.authProvider.resetPassword(email);
         await loading.dismiss();
         const alert: Alert = this.alertCtrl.create({
-          message: 'Check your email for a password reset link',
+          message: 'Check your inbox for a password reset link',
           buttons: [
             { text: 'Cancel', role: 'cancel' },
             {

@@ -4,37 +4,59 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { firebaseConfig } from './credentials';
+import { AngularFireModule } from 'angularfire2'
+import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { MyApp } from './app.component';
-
+import { HomePage } from '../pages/home/home';
 import { AuthProvider } from '../providers/auth/auth';
+import { MenuPage } from '../pages/menu/menu';
+import { TermsPage } from '../pages/terms/terms';
 import { FormPage } from '../pages/form/form';
-import { AutoCompleteModule } from 'ionic2-auto-complete';
+import { ThankyouPage } from '../pages/thankyou/thankyou';
+
+
 
 
 @NgModule({
   declarations: [
     MyApp,
- 
-    FormPage
-   
+    HomePage, 
+    MenuPage,
+    TermsPage,
+    FormPage,
+    ThankyouPage
   
+ 
+
+    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AutoCompleteModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    
-    FormPage
+    HomePage,
+    MenuPage,
+    TermsPage,
+    FormPage,
+    ThankyouPage
+   
+   
+   
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+  
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    
+  
   ]
 })
 export class AppModule {}
