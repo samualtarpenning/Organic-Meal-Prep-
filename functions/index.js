@@ -1,3 +1,4 @@
+
 'use strict';
 
 const functions = require('firebase-functions');
@@ -26,37 +27,48 @@ const mailTransport = nodemailer.createTransport({
 // TODO: Change this to your app or company name to customize the email sent.
 const APP_NAME = 'Organic Meal Prep';
 
-
 // [START sendTestEmail]
 /**
  * Sends a Test email.
  */
 // [START onRequestTrigger]
-exports.sendTestEmail = functions.https.onRequest((req, res) => {
-    // Grab the body object.
-    const original = req.body;
+exports.sendTestEmail = functions.database.ref(`messages/{messageId}`)
+.onWrite(event => {
+    let firstname = event.data.child('firstname').val();
+    let lastname = event.data.child('lastname').val();
+    let streetAddress = event.data.child('streetAddress').val();
+    let city = event.data.child('city').val();
+    let state = event.data.child('state').val();
+  
 
     let test = {
-        email: 'email@email.com',
-        displayName: 'User Name',
+        email: 'samualtarpenning@gmail.com',
+        firstname: '',
+
+    
         somethingElse: 'something else'
     }
 
-    return sendEmail(test.email, test.displayName);
+    return sendEmail('samualtarpenning@gmail.com', firstname, lastname, streetAddress, city, state);
 
 });
 
 
 // Sends email.
-function sendEmail(email, displayName) {
+function sendEmail(email, firstname, lastname, streetAddress, city, state) {
     const mailOptions = {
         from: `${APP_NAME} <noreply@firebase.com>`,
         to: email,
     };
 
     // Sending Email
-    mailOptions.subject = `Welcome to ${APP_NAME}!`;
-    mailOptions.text = `Hey ${displayName || ''}! Welcome to ${APP_NAME}. I hope you will enjoy our service.`;
+    mailOptions.subject = `New Customer sign-up for ${APP_NAME}!`;
+    mailOptions.text = 
+  `First Name: ${firstname || ''} 
+   Last Name: ${lastname}. 
+   City: ${city}
+   
+   Address: ${streetAddress}`;
     return mailTransport.sendMail(mailOptions).then(() => {
         let message = 'Email sent to: ' + email;
         console.log(message);
