@@ -9,10 +9,10 @@ import {
 } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
-import { HomePage } from '../home/home';
+
 import { EmailValidator } from '../../validators/email';
-import firebase from 'firebase/app';
-import { LoginPage } from '../login/login';
+
+
 import { FormPage } from '../form/form';
 import { TermsPage } from '../terms/terms';
 

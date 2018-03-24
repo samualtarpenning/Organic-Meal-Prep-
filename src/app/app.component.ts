@@ -1,17 +1,14 @@
 import { Component } from '@angular/core';
-
 import firebase from 'firebase';
 import { firebaseConfig } from './credentials';
-
 import { Unsubscribe } from '@firebase/util';
 
-import { AngularFireDatabaseModule } from 'angularfire2/database'
-import { AngularFireModule } from 'angularfire2'
+
 
 
 @Component({
   templateUrl: 'app.html'
-})
+})   
 export class MyApp {
   rootPage: any;
 
@@ -28,6 +25,15 @@ export class MyApp {
       } else { 
         this.rootPage = 'LoginPage';
         unsubscribe();
+      }
+    });
+
+    firebase.auth().onAuthStateChanged(function(user) { 
+      if (user.emailVerified) {
+        console.log('Email is verified');
+      }
+      else {
+        console.log('Email is not verified');
       }
     });
 

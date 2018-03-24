@@ -9,11 +9,11 @@ import {
 } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
-import { HomePage } from '../home/home';
+
 import { EmailValidator } from '../../validators/email';
 import firebase from 'firebase/app';
 
-import { Facebook } from '@ionic-native/facebook';
+
 import { FirebaseAuth } from '@firebase/auth-types';
 import { MenuPage } from '../menu/menu';
 

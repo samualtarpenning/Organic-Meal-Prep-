@@ -8,7 +8,7 @@ import { firebaseConfig } from './credentials';
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
 import { AuthProvider } from '../providers/auth/auth';
 import { MenuPage } from '../pages/menu/menu';
 import { TermsPage } from '../pages/terms/terms';
@@ -21,11 +21,12 @@ import { ThankyouPage } from '../pages/thankyou/thankyou';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage, 
+  
     MenuPage,
     TermsPage,
     FormPage,
-    ThankyouPage
+    ThankyouPage,
+ 
   
  
 
@@ -41,11 +42,12 @@ import { ThankyouPage } from '../pages/thankyou/thankyou';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+  
     MenuPage,
     TermsPage,
     FormPage,
-    ThankyouPage
+    ThankyouPage,
+
    
    
    
