@@ -1,0 +1,75 @@
+
+
+.auth-page {
+
+  //background-image: url(/assets/imgs/logo1.png);
+background-repeat: no-repeat;
+    background-size: 300px 400px; 
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25px;
+   
+    background-color: rgb(230,230,230);
+}
+
+.loginCard{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-top: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.3s;
+    margin: auto;
+   margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 18px;
+    
+}
+
+// changes here as well
+
+.loginEmail{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+.loginPassword{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+.error-message{
+    background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+.error2{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.loginButton{
+    background-color:#4CAF50;
+    font-size: 20px;
+    border-radius: 10px;
+
+   
+}
+
+.signupButton{
+    color:#4CAF50;
+    font-size: 14px;
+}
+
+.forgotPassword{
+    color: #4CAF50;
+    font-size: 14px;
+}
+
+ 

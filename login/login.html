@@ -1,0 +1,51 @@
+ 
+
+<ion-content padding class="auth-page">
+
+  
+ 
+
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+    <ion-card class="loginCard">
+
+   <img style=" margin-left: auto;  margin-right: auto; width: 30%; height: 38%; padding-bottom: 15px; "src="assets/imgs/logo1.png"
+        alt="Banner for the login page" class="loginHead"/> 
+
+
+    <ion-item  class="loginEmail" [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.touched"
+      [class.valid]="loginForm.controls.email.valid && loginForm.controls.email.touched">
+     
+      <ion-label stacked> <ion-icon name="mail"></ion-icon>   Email</ion-label>
+      <!-- <--!also made changes her-->
+      <ion-input formControlName="email" type="email" placeholder="Your email address">
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid &&
+     loginForm.controls.email.touched">
+      <p class="error2">Please enter a valid email address.</p>
+    </ion-item>
+ 
+    <ion-item class="loginPassword" [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.touched"
+      [class.valid]="loginForm.controls.password.valid && loginForm.controls.password.touched">
+      <ion-label stacked>  <ion-icon name="lock"></ion-icon> Password</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Your password">
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid
+    && loginForm.controls.password.touched">
+      <p>Your password needs more than 6 characters.</p>
+    </ion-item>
+
+    <button class="loginButton" ion-button block type="submit" [disabled]="!loginForm.valid">Login</button>
+  
+   
+ 
+  
+  <button class="signupButton" ion-button block clear (click)="goToSignup()">
+    Create a new account
+  </button>
+  
+  <button class="forgotPassword" ion-button block clear (click)="goToResetPassword()">
+    I forgot my password
+  </button>
+</ion-card>
